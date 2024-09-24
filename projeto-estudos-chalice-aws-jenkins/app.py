@@ -1,6 +1,6 @@
 from chalice import Chalice
 
-app = Chalice(app_name='projeto-estudos-chalcie-aws-jenkins')
+app = Chalice(app_name='projeto-estudos-chalice-aws-jenkins')
 
 
 @app.route('/')
