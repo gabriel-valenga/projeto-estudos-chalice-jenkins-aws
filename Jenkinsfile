@@ -13,7 +13,18 @@ pipeline {
                 sh 'which python3' // Verifica o caminho do Python 3 no ambiente Jenkins
             }
         }
-       stage('Setup') {
+        stage('Debug AWS Parameter Store') {
+            steps {
+                script {
+                    // Usando AWS CLI para testar a recuperação do parâmetro
+                    sh """
+                    aws ssm get-parameter --name ${SENHA_GMAIL_GABRIELVALENGATESTESAWS1} --with-decryption --query "Parameter.Value" --output text
+                    """
+                }
+            }
+        }
+       
+        stage('Setup') {
             steps {
                 sh '/usr/bin/python3 --version' // Usando o caminho absoluto para Python
             }
