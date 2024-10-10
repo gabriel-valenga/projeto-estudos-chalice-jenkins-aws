@@ -23,7 +23,6 @@ pipeline {
                 }
             }
         }
-       
         stage('Setup') {
             steps {
                 sh '/usr/bin/python3 --version' // Usando o caminho absoluto para Python
