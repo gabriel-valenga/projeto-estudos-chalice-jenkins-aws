@@ -14,7 +14,7 @@ def teste_obter_parametro_senha_email(event, context):
         gmail_password = response['Parameter']['Value']
         
         # Exemplo de uso da senha (não imprima em produção!)
-        print("Senha do Gmail recuperada com sucesso.")
+        print(f"Senha do Gmail recuperada com sucesso. {gmail_password}")
         
         # Aqui você pode usar a senha para enviar e-mails ou outras operações
         # Exemplo: enviar_email(gmail_password)
