@@ -1,4 +1,5 @@
 from chalice import Chalice
+from chalicelib.services.email import teste_obter_parametro_senha_email 
 
 app = Chalice(app_name='projeto-estudos-chalice-aws-jenkins')
 
@@ -7,6 +8,11 @@ app = Chalice(app_name='projeto-estudos-chalice-aws-jenkins')
 def index():
     return {'hello': 'world'}
 
+
+@app.route('/teste_obter_parametro')
+def teste_obter_parametro():
+    teste_obter_parametro_senha_email()
+    return 'teste'
 
 # The view function above will return {"hello": "world"}
 # whenever you make an HTTP GET request to '/'.
