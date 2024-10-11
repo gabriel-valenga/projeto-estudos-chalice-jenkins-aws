@@ -1,5 +1,5 @@
 from chalice import Chalice
-from chalicelib.services.email import teste_obter_parametro_senha_email 
+from chalicelib.services.email import enviar_email_de_teste 
 
 app = Chalice(app_name='projeto-estudos-chalice-aws-jenkins')
 
@@ -9,27 +9,16 @@ def index():
     return {'hello': 'world'}
 
 
-@app.route('/teste_obter_parametro', methods=['GET'])
-def teste_obter_parametro():
-    teste_obter_parametro_senha_email()
+@app.route('/teste_enviar_email', methods=['POST'])
+def teste_enviar_email():
+    request = app.current_request()
+    corpo_json = request.json
+    assunto = corpo_json.get('destinatario')
+    corpo_email = corpo_email.get('corpo')
+    destinatario = corpo_json.get('destinatario')
+    enviar_email_de_teste(
+        assunto=assunto,
+        corpo=corpo_email,
+        email_destinatario=destinatario
+    )
     return 'teste'
-
-# The view function above will return {"hello": "world"}
-# whenever you make an HTTP GET request to '/'.
-#
-# Here are a few more examples:
-#
-# @app.route('/hello/{name}')
-# def hello_name(name):
-#    # '/hello/james' -> {"hello": "james"}
-#    return {'hello': name}
-#
-# @app.route('/users', methods=['POST'])
-# def create_user():
-#     # This is the JSON body the user sent in their POST request.
-#     user_as_json = app.current_request.json_body
-#     # We'll echo the json body back to the user in a 'user' key.
-#     return {'user': user_as_json}
-#
-# See the README documentation for more examples.
-#
