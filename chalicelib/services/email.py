@@ -51,7 +51,7 @@ def enviar_email(remetente, senha, destinatario, assunto, corpo):
         print(f"Ocorreu um erro ao enviar o e-mail: {e}")
 
 
-def enviar_email_de_teste(remetente, email_destinatario, assunto, corpo):
+def enviar_email_de_teste(email_destinatario, assunto, corpo):
     try:
         # Criar um cliente para o SSM
         ssm_client = boto3.client('ssm')
