@@ -15,7 +15,7 @@ def teste_enviar_email():
     request = app.current_request
     corpo_json = json.loads(request.raw_body)  # Carrega o corpo como JSON
     assunto = corpo_json.get('assunto')
-    corpo_email = corpo_email.get('corpo')
+    corpo_email = corpo_json.get('corpo')
     destinatario = corpo_json.get('destinatario')
     enviar_email_de_teste(
         assunto=assunto,
