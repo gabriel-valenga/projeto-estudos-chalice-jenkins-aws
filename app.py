@@ -11,7 +11,7 @@ def index():
 
 @app.route('/teste_enviar_email', methods=['POST'])
 def teste_enviar_email():
-    request = app.current_request()
+    request = app.current_request
     corpo_json = request.json
     assunto = corpo_json.get('assunto')
     corpo_email = corpo_email.get('corpo')
