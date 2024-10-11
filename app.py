@@ -10,7 +10,7 @@ def index():
 
 
 @app.route('/teste_obter_parametro', methods=['GET'])
-def teste_obter_parametro(event, context):
+def teste_obter_parametro():
     teste_obter_parametro_senha_email()
     return 'teste'
 

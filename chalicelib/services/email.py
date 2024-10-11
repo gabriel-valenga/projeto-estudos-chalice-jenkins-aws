@@ -1,7 +1,7 @@
 import boto3
 import os
 
-def teste_obter_parametro_senha_email(event, context):
+def teste_obter_parametro_senha_email():
     # Criar um cliente para o SSM
     ssm_client = boto3.client('ssm')
 
