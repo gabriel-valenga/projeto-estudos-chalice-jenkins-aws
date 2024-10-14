@@ -65,7 +65,7 @@ def enviar_email_de_teste(email_destinatario, assunto, corpo):
         enviar_email(
             remetente='gabrielvalengatestesaws1@gmail.com',
             senha=senha_email,
-            email_destinatario=email_destinatario,
+            destinatario=email_destinatario,
             assunto=assunto,
             corpo=corpo         
         )
