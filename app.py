@@ -23,3 +23,8 @@ def teste_enviar_email():
         email_destinatario=destinatario
     )
     return 'teste'
+
+
+@app.schedule('rate(2 minutes)')
+def cron_teste_print(event):
+    print('teste')
